@@ -1,0 +1,830 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    var media_mb,media_b, media_r, media_i
+        var mediA = "", text
+        function media(){
+        media_mb = 0,media_b = 0, media_r = 0, media_i = 0, NA = 0
+        for (let k = 1; k < 15; k++){
+        for (let i = 1; i < 5; i++) {
+        mediA = document.getElementById('nota'+k+'_'+i).value
+        if (mediA == "MB") {
+            media_mb += 1
+        }
+        else if (mediA == "B") {
+            media_b += 1
+        }
+        else if (mediA == "R") {
+            media_r += 1
+        } else if (mediA == "I") {
+            media_i += 1
+        } else if (mediA == "none"){
+            NA += 1
+        }
+        }
+    }
+    text = "A media de MB é: "+media_mb+"<br>A media de B é: "+media_b+"<br>A media de R é: "+media_r+"<br>A media de I é: "+media_i+"<br> Total de NA: "+NA
+        document.getElementById('medias').innerHTML = text
+    }
+    </script>
+    <style>
+  /* Estilo para o cabeçalho */
+  h1 {
+    font-family: 'Times New Roman', serif;
+    /* Define a fonte */
+    font-size: 20px;
+    /* Define o tamanho da fonte */
+    font-weight: bold;
+    /* Define a fonte como negrito */
+    color: #800080;
+    /* Define a cor do texto*/
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 10px;
+    /* Adiciona preenchimento em torno do cabeçalho */
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo*/
+    border-radius: 10px;
+    /* Adiciona cantos arredondados*/
+    box-shadow: 0 6px 12px rgba(2, 2, 2, 0.2);
+    /* Adiciona uma sombra*/
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculas */
+  }
+ 
+  /* Estilo para a tabela */
+  .table {
+    font-family: 'Arial', sans-serif;
+    /* Define a fonte */
+    border-collapse: collapse;
+    margin: 20px 0;
+    /* Adiciona margem ao redor da tabela */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra à tabela */
+  }
+ 
+  /* Estilo para as th e td do cabeçalho e do corpo da tabela */
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    /* Define uma borda sólida com cor cinza clara */
+    padding: 10px;
+    /* Adiciona preenchimento dentro das th e td */
+    text-align: center;
+    /* Centraliza o texto dentro */
+  }
+ 
+  /* Estilo para as células do cabeçalho */
+  .table th {
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo da primeira linha e coluna da tabela */
+    color: white;
+    /* Define a cor do texto como branco */
+  }
+ 
+  /* Estilo para as linhas pares da coluna */
+  .table tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+    /* Define a cor de fundo das linhas pares */
+  }
+ 
+  /* Estilo para as linhas da tabela quando são passadas pelo cursor */
+  .table tbody tr:hover {
+    background-color: #d4e6f1;
+  }
+ 
+  /* Estilo para os botões de notas  */
+  .table select,
+  .table input[id="botao"] {
+    padding: 8px 5px;
+    /* Adiciona preenchimento */
+    border: 1px solid #6f00ff6f;
+    /* Define uma borda*/
+    border-radius: 5px;
+    /* Adiciona cantos arredondados*/
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Adiciona uma transição*/
+  }
+ 
+  /* Estilo para  os botões de notas quando são passados pelo cursor */
+  .table select:hover,
+  .table input[type="reset"]:hover {
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo dos botões de notas e ao passar o cursor */
+    color: white;
+    /* Define a cor do texto como branco */
+  }
+ 
+  /* Estilo para o botão de redefinir */
+  .table input[type="reset"] {
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo do botão*/
+    color: white;
+    /* Define a cor do texto como branco */
+    border: none;
+    /* Remove a borda do botão*/
+    border-radius: 5px;
+    /* Adiciona cantos arredondados */
+    cursor: pointer;
+    /* Altera o cursor para ponteiro */
+    /* cara esse aqui e muito toooooop ele troca a seta pela mão */
+    transition: background-color 0.3s ease;
+    /* Define a largura do botão como 100% */
+  }
+</style>
+<style>
+  /* Estilo para o cabeçalho */
+  .tito {
+    font-family: 'Times New Roman', serif;
+    /* Define a fonte */
+    font-size: 10px;
+    /* Define o tamanho da fonte */
+    font-weight: bold;
+    /* Define a fonte como negrito */
+    color: #800080;
+    /* Define a cor do texto*/
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 10px;
+    /* Adiciona preenchimento em torno do cabeçalho */
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo*/
+    border-radius: 10px;
+    /* Adiciona cantos arredondados*/
+    box-shadow: 0 6px 12px rgba(2, 2, 2, 0.2);
+    /* Adiciona uma sombra*/
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculas */
+  }
+ 
+  /* Estilo para a tabela */
+  .table {
+    font-family: 'Arial', sans-serif;
+    /* Define a fonte */
+    border-collapse: collapse;
+    margin: 20px 0;
+    /* Adiciona margem ao redor da tabela */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra à tabela */
+  }
+ 
+  /* Estilo para as th e td do cabeçalho e do corpo da tabela */
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    /* Define uma borda sólida com cor cinza clara */
+    padding: 10px;
+    /* Adiciona preenchimento dentro das th e td */
+    text-align: center;
+    /* Centraliza o texto dentro */
+  }
+ 
+  /* Estilo para as células do cabeçalho */
+  .table th {
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo da primeira linha e coluna da tabela */
+    color: white;
+    /* Define a cor do texto como branco */
+  }
+ 
+  /* Estilo para as linhas pares da coluna */
+  .table tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+    /* Define a cor de fundo das linhas pares */
+  }
+ 
+  /* Estilo para as linhas da tabela quando são passadas pelo cursor */
+  .table tbody tr:hover {
+    background-color: #d4e6f1;
+  }
+ 
+  /* Estilo para os botões de notas  */
+  .table select,
+  .table input[type="reset"] {
+    padding: 8px 5px;
+    /* Adiciona preenchimento */
+    border: 1px solid #6f00ff6f;
+    /* Define uma borda*/
+    border-radius: 5px;
+    /* Adiciona cantos arredondados*/
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Adiciona uma transição*/
+  }
+ 
+  /* Estilo para  os botões de notas quando são passados pelo cursor */
+  .table select:hover,
+  .table input[type="reset"]:hover {
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo dos botões de notas e ao passar o cursor */
+    color: white;
+    /* Define a cor do texto como branco */
+  }
+ 
+  /* Estilo para o botão de redefinir */
+  .table input[type="reset"] {
+    background-color: #6f00ff6f;
+    /* Define a cor de fundo do botão*/
+    color: white;
+    /* Define a cor do texto como branco */
+    border: none;
+    /* Remove a borda do botão*/
+    border-radius: 5px;
+    /* Adiciona cantos arredondados */
+    cursor: pointer;
+    /* Altera o cursor para ponteiro */
+    /* cara esse aqui e muito toooooop ele troca a seta pela mão */
+    transition: background-color 0.3s ease;
+    /* Define a largura do botão como 100% */
+  }
+</style>
+</head>
+<body>
+    <h1>Controle de Menções</h1>
+   
+    <form id="meuForm">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Disciplinas</th>
+      <th scope="col">1º Bim</th>
+      <th scope="col">2º Bim</th>
+      <th scope="col">3º Bim</th>
+      <th scope="col">4º Bim</th>
+    </tr>
+ 
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Língua Portuguesa</th>
+      <td>
+     <select id="nota1_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota1_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota1_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota1_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+ 
+    <tr>
+      <th scope="row">Língua Inglesa</th>
+        <td>
+     <select id="nota2_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota2_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota2_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota2_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Educação Física </th>
+        <td>
+     <select id="nota3_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota3_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota3_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota3_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Matemática  </th>
+        <td>
+     <select id="nota4_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota4_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota4_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota4_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Física </th>
+        <td>
+     <select id="nota5_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota5_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota5_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota5_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Química </th>
+        <td>
+     <select id="nota6_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota6_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota6_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota6_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Biologia  </th>
+        <td>
+     <select id="nota7_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota7_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota7_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota7_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">História </th>
+        <td>
+     <select id="nota8_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota8_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota8_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota8_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Geografia  </th>
+        <td>
+     <select id="nota9_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota9_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota9_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota9_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Programação Web </th>
+        <td>
+     <select id="nota10_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota10_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota10_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota10_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Banco de Dados   </th>
+        <td>
+     <select id="nota11_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota11_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota11_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota11_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Desenvolvimento de Sistemas </th>
+        <td>
+     <select id="nota12_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota12_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota12_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota12_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Ética e Cidadania Organizacional  </th>
+        <td>
+     <select id="nota13_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota13_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota13_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota13_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">Programação de Aplicativos Mobile  </th>
+        <td>
+     <select id="nota14_1">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota14_2">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota14_3">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+       <td>
+     <select id="nota14_4">
+         <option value="none"></option>
+         <option value="MB">MB</option>
+         <option value="B">B</option>
+         <option value="R">R</option>
+         <option value="I">I</option>
+     </select>    
+     </td>
+    </tr>
+    <tr>
+      <td>
+    <input type="reset" id="botao">
+        </td>
+        <td>
+    <input type="button" id="botao" onclick="media()" value="Calcular" style="padding: 8px 5px;border: 1px solid #6f00ff6f;border-radius: 5px;background-color: #6f00ff6f;color: white;">
+        </td>
+    </tr>    
+  </tbody>
+ 
+</table>
+</form>
+<h1 id="medias"></h1>
+</body>
+</html>
